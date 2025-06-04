@@ -1,0 +1,308 @@
+/* --- Basic Reset & Font --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;  /* stack elements vertically */
+    align-items: center;     /* center horizontally */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Main Container --- */
+.container {
+    position: static; /* Make this the positioning context */
+    background-color: #ffffff;
+    padding: 40px 50px 40px 50px; /* Top padding increased to make room for buttons */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* --- Header --- */
+header h1 {
+    color: #2a3d45; /* Slightly muted dark blue/grey */
+    font-family: 'Audiowide';
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 2.5rem; /* Larger title */
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* --- Search Section --- */
+.search-section {
+    margin-bottom: 30px;
+}
+
+#searchForm {
+    display: flex;
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners for form */
+    overflow: hidden; /* Keeps button contained */
+}
+
+#searchInput {
+    flex-grow: 1; /* Input takes available space */
+    padding: 15px 20px;
+    border: none; /* Remove default input border */
+    font-size: 1rem;
+    font-family: inherit; /* Use body font */
+    color: #555;
+    outline: none; /* Remove focus outline */
+}
+
+#searchInput::placeholder {
+    color: #aaa;
+    font-weight: 300;
+}
+
+#searchButton {
+    padding: 15px 25px;
+    border: none;
+    background-color: #4a90e2; /* Pleasant blue */
+    color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+#searchButton:hover {
+    background-color: #357abd; /* Slightly darker blue on hover */
+}
+
+/* --- Results Section --- */
+.results-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Slightly different background for results */
+    border-radius: 8px;
+    min-height: 50px; /* Ensure it has some height */
+    text-align: left; /* Align results text left */
+    color: #555;
+    line-height: 1.6;
+}
+
+.placeholder-text {
+    color: #999;
+    font-style: italic;
+    text-align: center; /* Center placeholder */
+}
+
+/* --- Simple Error Styling (Example) --- */
+.error-message {
+    color: #d9534f; /* Reddish color for errors */
+    font-weight: bold;
+}
+
+.block-details code {
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.block-details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.block-details li {
+    font-family: monospace;
+    margin-bottom: 4px;
+}
+
+.toggle-button {
+    background-color: #007bff; /* Blue background */
+    border: none; /* Remove default border */
+    color: white; /* White text */
+    padding: 6px 12px; /* Smaller padding for a smaller button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Align inline with other content */
+    font-size: 14px; /* Smaller text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Make text bold */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.toggle-button:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+}
+
+.toggle-button:active {
+    background-color: #004085; /* Even darker blue when clicked */
+}
+
+/* Styling the transactions list */
+#transactionsList {
+    margin-top: 20px;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+/* --- Simple Loading Styling (Example) --- */
+.loading-message {
+    color: #5bc0de; /* Info blue */
+    font-style: italic;
+    text-align: center;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 25px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #searchForm {
+        flex-direction: column; /* Stack input and button on small screens */
+        border: none; /* Remove border when stacked */
+        border-radius: 0;
+    }
+
+    #searchInput {
+        border: 1px solid #ddd; /* Add border back to input */
+        border-radius: 8px; /* Round corners */
+        margin-bottom: 10px; /* Add space below input */
+        text-align: center;
+    }
+
+     #searchButton {
+        border-radius: 8px; /* Round corners */
+        width: 100%; /* Make button full width */
+    }
+
+    .results-section {
+        padding: 15px;
+    }
+
+    .container-position-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .saved-utxos-button {
+        margin-top: 10px;
+    }
+}
+
+.top-buttons {
+    margin-bottom: 10px; /* or however much space you want above the container */
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.mode-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mode-button:hover {
+    transform: translateY(-2px);
+}
+
+.mode-button.transactions {
+    background-color: #007BFF; /* Blue tone for blocks/tx */
+    color: white;
+}
+
+.mode-button.wallets {
+    background-color: #28A745; /* Green tone for wallets */
+    color: white;
+}
+
+.container-position-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Match .container width */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.saved-utxos-button {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 158px; /* Adjust this to control distance from container */
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.saved-utxos-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.saved-utxos-section {
+    position: absolute;
+    display: none;
+    top: 60px;
+    right: -225px; /* Adjust this to control distance from container */
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.utxos-container-position-wrapper {
+    flex-direction: column;
+    align-items: center;
+}
+
+.utxos-container {
+    /* position: static; Make this the positioning context */
+    position: absolute;
+    top: 100px;
+    background-color: #ffffff;
+    /* padding: 40px 50px 40px 50px; Top padding increased to make room for buttons */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    max-width: 600px;
+    width: 100%;   
+}

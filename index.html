@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blast - Bitcoin Explorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="top-buttons">
+        <button class="mode-button transactions" id ="blocksButton">Transactions and Blocks</button>
+        <button class="mode-button wallets" id ="walletsButton">Wallets</button>
+    </div>
+
+    <div class="container-position-wrapper">
+        <main class="container">
+            <header>
+                <h1>Blast</h1>
+                <p class="subtitle">Your quick window into the Bitcoin Blockchain</p>
+            </header>
+    
+            <section class="search-section">
+                <form id="searchForm">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search..."
+                        aria-label="Search Bitcoin Blockchain"
+                        required
+                    >
+                    <button type="submit" id="searchButton">Search</button>
+                </form>
+                <button id="backButton" class="toggle-button" style="margin-top: 20px; display: none;">&laquo; Previous Search</button>
+            </section>
+    
+            <section class="results-section" id="results">
+                <p class="placeholder-text">Search block height, hash or transaction id.</p>
+            </section>
+        </main>
+    
+
+    </div>
+
+    <div class="utxos-container-position-wrapper">
+        <main class="utxos-container">
+            <button class="saved-utxos-button" id="utxosButton">
+                Saved UTXOs
+            </button>
+            <section class="saved-utxos-section" id="saved-utxos">
+                <p>Saved UTXOs scans should be here.</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
