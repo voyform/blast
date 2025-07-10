@@ -2,8 +2,8 @@ from bitcoinrpc.authproxy import AuthServiceProxy
 import datetime
 
 # Configuration - rpc_user and rpc_password are set in the bitcoin.conf file
-rpc_user = 'Wojtek'
-rpc_password = 'test'
+rpc_user = 'user'
+rpc_password = 'password'
 rpc_host = '127.0.0.1'
 rpc_port = '8332'
 
